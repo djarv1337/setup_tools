@@ -24,7 +24,6 @@ fi
 # Apply zsh configuration
 echo "[-] Apply zsh configuration... [-]" 
 cp .zshrc ~/.zshrc
+cp .p10k.zsh ~/.p10k.zsh
 source ~/.zshrc
 ######################################################
-
-

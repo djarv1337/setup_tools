@@ -1,8 +1,12 @@
-# Set theme, prompt
-ZSH_THEME="powerlevel10k/powerlevel10k" #"agnoster"
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=() #(status kubecontext time)
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Set theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 # Update automatically without asking
@@ -67,3 +71,6 @@ if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/s
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Customize prompt
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
